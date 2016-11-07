@@ -5,24 +5,42 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
       Secciones de la guía
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Secciones</h3>
+<ion-content>
 
-  <ion-list>
-    <md-card *ngFor="let post of postList">
-      <img md-card-image src="{{ post.better_featured_image.source_url }}">
-      <md-card-title>{{ post.title.rendered }}</md-card-title>
-      <md-card-content [innerHTML]="post.excerpt.rendered"></md-card-content>
-      <md-card-actions align="end">
-        <button md-button>LEER</button>
-      </md-card-actions>
-    </md-card>
-  </ion-list>
+  <div class="card-container" *ngFor="let post of postList"  [style.background]="post.color">
+    <div class="background">
+      <div class="darken"></div>
+      <div class="image">
+        <img src="{{ post.image }}">
+        <div class="fade" [ngStyle]="{'background-image':'linear-gradient(to bottom, transparent, '+ post.color + ')'}"></div>
+      </div>
+
+    </div>
+
+    <div class="header">
+
+      <div class="title">{{ post.title }}</div>
+      <div class="subtitle">{{ post.excerpt }}</div>
+    </div>
+
+    <div class="content" padding>
+      <md-card *ngFor="let post of post.children">
+        <img md-card-image src="{{ post.image }}">
+        <md-card-title>{{ post.title }}</md-card-title>
+        <md-card-content>{{ post.excerpt }}</md-card-content>
+        <md-card-actions align="end">
+          <button md-button>LEER</button>
+        </md-card-actions>
+      </md-card>
+
+    </div>
+
+  </div>
 </ion-content>

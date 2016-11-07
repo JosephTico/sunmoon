@@ -19,9 +19,9 @@ export class TabsPage {
 
   constructor() {
     this.pages = [
-      { title: 'Sección principal', icon: 'water', component: MainPage },
-      { title: 'Guías', icon: 'water', component: SeccionesPage },
-      { title: 'Noticias', icon: 'water', component: NoticiasPage }
+      { title: 'Inicio', icon: 'home', component: MainPage },
+      { title: 'Guías', icon: 'map', component: SeccionesPage },
+      { title: 'Noticias', icon: 'paper', component: NoticiasPage }
     ];
   }
 

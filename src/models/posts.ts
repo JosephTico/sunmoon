@@ -3,12 +3,12 @@
  */
 export interface Post {
   id: number;
-  date: string;
-  link: string;
-  title: RenderedItem;
-  content: RenderedItem;
-  excerpt: RenderedItem;
-  better_featured_image: Media;
+  url: string;
+  title: string;
+  image: string;
+  color: string;
+  excerpt: string;
+  children: Post[];
 }
 
 export interface RenderedItem {

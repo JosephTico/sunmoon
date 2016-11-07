@@ -15,14 +15,14 @@ import { Post } from '../models/posts';
 @Injectable()
 export class PostsProvider {
 
-  ApiUrl = 'http://www.cpokemon.com/wp-json/wp/v2/pages';
+  ApiUrl = 'http://www.cpokemon.com/sunmoon/?api=1&callback=JSONP_CALLBACK';
 
   constructor(public http: Http, public jsonp: Jsonp) {
     console.log('Hello PostsProvider Provider');
   }
 
   load(): Observable<Post[]> {
-    return this.jsonp.request(`${this.ApiUrl}/?parent=28961&orderby=menu_order&order=asc&per_page=99&_jsonp=JSONP_CALLBACK`, { method: 'Get' })
+    return this.jsonp.request(this.ApiUrl, { method: 'Get' })
       .map(res => <Post[]>res.json());
   }
 
