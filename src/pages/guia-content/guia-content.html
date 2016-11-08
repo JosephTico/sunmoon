@@ -7,16 +7,21 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{post?.title.rendered}}</ion-title>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="share()">
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-
 <ion-content>
-  <div class="excerpt" [innerHTML]="post?.excerpt.rendered"></div>
-  <button ion-button (click)="launch('http://www.cpokemon.com')">Default</button>
+  <div class="excerpt" [ngStyle]="{'background-image':' linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('+ image + ')'}">
+    <p>{{excerpt}}</p>
+  </div>
 
   <div class="content" [innerHTML]="post?.content.rendered"></div>
 </ion-content>

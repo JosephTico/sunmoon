@@ -22,8 +22,8 @@ export interface PostContent {
 }
 
 export interface RenderedItem {
-  rendered: String;
-  fixed: String;
+  rendered: string;
+  fixed: string;
 }
 
 export interface Media {

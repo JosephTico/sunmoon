@@ -17,6 +17,31 @@
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
+  <script>
+    function hasClass(element, cls) {
+      return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+    }
+
+    document.onclick = function (e) {
+      e = e ||  window.event;
+      var element = e.target || e.srcElement;
+
+      if (element.tagName == 'A') {
+        cordova.plugins.browsertab.openUrl(element.href);
+        e.preventDefault();
+        return false;
+      }
+
+      if (element.tagName == 'IMG') {
+        if (hasClass(element, "aligncenter") || hasClass(element, "alignright") || hasClass(element, "alignleft") || hasClass(element, "alignnone") ) {
+          cordova.plugins.browsertab.openUrl(element.parentElement.href);
+          e.preventDefault();
+          return false;
+        }
+      }
+    };
+  </script>
+
   <!-- un-comment this code to enable service worker
   <script>
     if ('serviceWorker' in navigator) {

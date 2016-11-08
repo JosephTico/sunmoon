@@ -31,8 +31,13 @@ export class SeccionesPage {
     });
   }
 
-  goToContent(id: number) {
-    this.navCtrl.push(GuiaContentPage, {id})
+  goToContent(id: number, title: string, excerpt: string, image: string) {
+    this.navCtrl.push(GuiaContentPage, {
+      id: id,
+      title: title,
+      excerpt: excerpt,
+      image: image
+    })
   }
 
   ionViewDidLoad() {
