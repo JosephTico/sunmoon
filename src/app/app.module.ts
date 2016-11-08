@@ -8,6 +8,7 @@ import {SeccionesPage} from "../pages/secciones/secciones";
 import {PostsProvider} from "../providers/posts";
 import {HttpModule, JsonpModule} from "@angular/http";
 import {TabsPage} from "../pages/tabs/tabs";
+import {GuiaContentPage} from "../pages/guia-content/guia-content";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {TabsPage} from "../pages/tabs/tabs";
     TabsPage,
     MainPage,
     SeccionesPage,
-    NoticiasPage
+    NoticiasPage,
+    GuiaContentPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -30,7 +32,8 @@ import {TabsPage} from "../pages/tabs/tabs";
     TabsPage,
     MainPage,
     SeccionesPage,
-    NoticiasPage
+    NoticiasPage,
+    GuiaContentPage
   ],
   providers: [PostsProvider]
 })

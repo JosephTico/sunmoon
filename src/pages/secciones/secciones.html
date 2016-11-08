@@ -31,7 +31,7 @@
     </div>
 
     <div class="content" padding>
-      <md-card *ngFor="let post of post.children">
+      <md-card *ngFor="let post of post.children" (click)="goToContent(post.id)">
         <img md-card-image src="{{ post.image }}">
         <md-card-title>{{ post.title }}</md-card-title>
         <md-card-content>{{ post.excerpt }}</md-card-content>

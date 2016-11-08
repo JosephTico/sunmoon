@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import {NavController, LoadingController} from 'ionic-angular';
-import { Post } from '../../models/posts';
-import { PostsProvider } from '../../providers/posts';
+import {Component} from "@angular/core";
+import {NavController, LoadingController} from "ionic-angular";
+import {Post} from "../../models/posts";
+import {PostsProvider} from "../../providers/posts";
+import {GuiaContentPage} from "../guia-content/guia-content";
 
 /*
   Generated class for the Secciones page.
@@ -28,6 +29,10 @@ export class SeccionesPage {
       this.postList = posts;
       this.loader.dismiss();
     });
+  }
+
+  goToContent(id: number) {
+    this.navCtrl.push(GuiaContentPage, {id})
   }
 
   ionViewDidLoad() {

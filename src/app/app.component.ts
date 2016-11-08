@@ -12,7 +12,7 @@ export class MyApp {
   // make HelloIonicPage the root (or first) page
   rootPage: any = TabsPage;
 
-  constructor(public platform: Platform,) {
+  constructor(public platform: Platform) {
     this.initializeApp();
   }
 
@@ -20,7 +20,7 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      StatusBar.overlaysWebView(false);
+      StatusBar.styleDefault();
       StatusBar.backgroundColorByHexString("#981d1d");
     });
   }
